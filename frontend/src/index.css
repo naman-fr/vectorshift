@@ -1,0 +1,102 @@
+:root {
+  --bg-color: #f8fafc;
+  --node-bg: #ffffff;
+  --node-border: #e2e8f0;
+  --node-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --node-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --primary: #3b82f6;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --handle-bg: #60a5fa;
+  --handle-border: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.base-node {
+  background: var(--node-bg);
+  border: 1px solid var(--node-border);
+  border-radius: 12px;
+  min-width: 240px;
+  box-shadow: var(--node-shadow);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.base-node:hover {
+  box-shadow: var(--node-shadow-hover);
+  border-color: var(--primary);
+}
+
+.node-header {
+  background: #f1f5f9;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--node-border);
+  display: flex;
+  align-items: center;
+}
+
+.node-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.node-content label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  gap: 6px;
+}
+
+.node-content input,
+.node-content select,
+.node-content textarea {
+  padding: 8px 12px;
+  border: 1px solid var(--node-border);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-main);
+  background: #f8fafc;
+  transition: border-color 0.15s ease;
+  font-family: inherit;
+  resize: none;
+}
+
+.node-content input:focus,
+.node-content select:focus,
+.node-content textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+}
+
+/* React Flow Handle styling */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: var(--handle-bg);
+  border: 2px solid var(--handle-border);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+}
+
+/* Specific Handle positioning for multiple handles */
+.handle-left-dynamic {
+  top: auto !important; /* Will be set inline */
+}
